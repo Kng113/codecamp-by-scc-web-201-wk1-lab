@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "your-firebase-project-id"
+    "default": "cc-karma-week1"
   }
 }
-

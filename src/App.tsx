@@ -46,7 +46,7 @@ function App() {
       </main>
 
       <footer>
-        <p>Built by [Your Name] • Code Camp Week 1 Lab</p>
+        <p>Built by Karma • Code Camp Week 1 Lab</p>
       </footer>
     </div>
   )
