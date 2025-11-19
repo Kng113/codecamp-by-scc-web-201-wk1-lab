@@ -1,42 +1,20 @@
+// src/App.tsx
 import { useState } from 'react'
+import TextArea from './components/TextArea'
+import Buttons from './components/Buttons'
+import ResultBox from './components/ResultBox'
 import { reverseText, countWords, toTitleCase } from './utils/textTools'
-import './App.css'
+import './styles.css'
 
-function App() {
-  const [text, setText] = useState('')
-  const [result, setResult] = useState('')
+export default function App() {
+  const [text, setText] = useState<string>('')
+  const [result, setResult] = useState<string>('')
 
-  return (
-    <div className="container">
-      <header>
-        <h1>🔧 Mini Text Toolkit</h1>
-        <p>Week 1 Lab - String Manipulation</p>
-      </header>
+  const handleReverse = () => setResult(reverseText(text))
+  const handleTitleCase = () => setResult(toTitleCase(text))
+  const handleCount = () => setResult(`Word Count: ${countWords(text)}`)
 
-      <main>
-        <div className="input-section">
-          <label htmlFor="input">Enter your text:</label>
-          <textarea
-            id="input"
-            value={text}
-            onChange={e => setText(e.target.value)}
-            placeholder="Type or paste text here..."
-            rows={6}
-          />
-        </div>
-
-        <div className="buttons">
-          <button onClick={() => setResult(reverseText(text))}>
-            🔄 Reverse
-          </button>
-          <button onClick={() => setResult(toTitleCase(text))}>
-            🔤 Title Case
-          </button>
-          <button onClick={() => setResult(`Word Count: ${countWords(text)}`)}>
-            🔢 Count Words
-          </button>
-        </div>
-
+<<<<<<< HEAD
         <div className="output-section">
           <label htmlFor="output">Result:</label>
           <div id="output" className="output">
@@ -47,9 +25,25 @@ function App() {
 
       <footer>
         <p>Built by Karma • Code Camp Week 1 Lab</p>
+=======
+  return (
+    <main className="container">
+      <a className="skip" href="#result">
+        Skip to result
+      </a>
+      <h1>Mini Text Toolkit</h1>
+      <TextArea value={text} onChange={setText} />
+      <Buttons
+        disabled={!text}
+        onReverse={handleReverse}
+        onTitleCase={handleTitleCase}
+        onCount={handleCount}
+      />
+      <ResultBox result={result} />
+      <footer className="footer">
+        Built by <strong>Your Name</strong> · Week 1
+>>>>>>> 5563e1dfb587c17dff2067aa70033a81e727528a
       </footer>
-    </div>
+    </main>
   )
 }
-
-export default App

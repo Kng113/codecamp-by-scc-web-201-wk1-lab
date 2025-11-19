@@ -1,0 +1,101 @@
+:root {
+  --bg: #f6f5f2;
+  --ink: #0b1220;
+  --muted: #6b7280;
+  --brand: #2563eb;
+  --border: #e5e7eb;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+  background: var(--bg);
+  color: var(--ink);
+}
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+}
+.label {
+  display: block;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+textarea {
+  width: 100%;
+  height: 160px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  resize: vertical;
+}
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+button:enabled {
+  background: var(--brand);
+  color: #fff;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.result {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  min-height: 3rem;
+  outline: none;
+}
+.footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+.help {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 0.25rem;
+}
+hr {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
